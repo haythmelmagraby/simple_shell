@@ -3,7 +3,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-char** print_plited (char *src,char *delim){
+//char** print_plited (char *src,char *delim){
+char** split_string(char *src,char *delim){
 	int index = 0,i = 0;
 
 	char *str = copy_string(src);
@@ -27,10 +28,10 @@ char** print_plited (char *src,char *delim){
 	str = copy_string(src);
 	token = strtok(str,delim);
 	while(token != NULL){
-//		printf("result of token:%s\n",token);
+		printf("result of token:%s\n",token);
 		arr[i] = token;
 		token = strtok(NULL,delim);
-//		printf("result of arr[%d]:%s\n",i,arr[i]);
+		printf("result of arr[%d]:%s\n",i,arr[i]);
 		i++;
 	}
 	arr[i] = NULL;
@@ -38,12 +39,12 @@ char** print_plited (char *src,char *delim){
 }
 
 
-int main(void){
-	char** myarr = print_plited("haythm elmagraby ahmed abd elbary"," ");
-	int i =0 ;
-	while(myarr[i] != NULL){
-		printf("%s\n",myarr[i]);
-		i++;
-	}
-	return 0;
-}
+//int main(void){
+//	char** myarr = split_string("haythm elmagraby ahmed abd elbary"," ");
+//	int i =0 ;
+//	while(myarr[i] != NULL){
+//		printf("%s\n",myarr[i]);
+//		i++;
+//	}
+//	return 0;
+//}
