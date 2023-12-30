@@ -9,7 +9,11 @@ int main(int ac, char** av){
 //                printf("%s\n",args[i]);
 //                i++;
 //        }
-	if(execve(av[1],av+1,NULL) == -1){
+	 char* param = {"/bin/ls"};
+        char** ptr = &param;
+	if(execve(ptr[0],ptr,NULL) == -1){
+//	if(execve(av[1],av+1,NULL) == -1){
+		printf("the path is : %s\n",av[1]);
 		perror("ERROR");
 	}	
 	return 0;
