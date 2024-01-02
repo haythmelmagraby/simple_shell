@@ -30,6 +30,10 @@ int main(int ac, char **av)
 		ptr_arr = split_string(line, delim);
 		if (my_strcmp(ptr_arr[0], "exit") == 0)
 			exit(0);
+
+		if (my_strcmp(ptr_arr[0], "env") == 0)
+			print_env();
+		else
 		check_path(ptr_arr);
 /*		execute(ptr_arr);*/
 		my_print("#cisfun$");

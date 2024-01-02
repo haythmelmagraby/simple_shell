@@ -25,5 +25,6 @@ void execute(char **args);
 
 void check_path(char **args);
 
+void print_env(void);
 
 #endif
