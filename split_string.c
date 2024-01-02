@@ -5,13 +5,6 @@
 *@src: the source string array
 *@delim: the delimeter which will be the split point
 *
-	if(token == NULL)
-	{
-		free(str);
-		free(str2);
-		free(token);
-		return(NULL);
-	}
 *Return: array of pointers to splited strings
 **/
 

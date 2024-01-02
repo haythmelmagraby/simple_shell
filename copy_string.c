@@ -13,6 +13,11 @@ char *copy_string(const char *src)
 	int i = 0, j = 0;
 	char *copy;
 
+	if (src == NULL)
+	{
+		my_print("src is null\n");
+		exit(1);
+	}
 	while (src[i] != '\0')
 		i++;
 
