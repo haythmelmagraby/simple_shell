@@ -6,7 +6,7 @@
 **/
 
 
-void check_path(char **args)
+void check_path(char *p_name, char **args)
 {
 	char *path = my_getenv("PATH");
 	char *copy = copy_string(path);
@@ -34,6 +34,8 @@ void check_path(char **args)
 	}
 	if (flag == 0)
 	{
+		my_print(p_name);
+		my_print(": 1:");
 		my_print(args[0]);
 		my_print(" : FILE NOT FOUND\n");
 	}

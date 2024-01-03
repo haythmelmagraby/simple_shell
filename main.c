@@ -16,14 +16,11 @@ int main(int ac, char **av)
 
 	if (ac > 1)
 	{
-		 /*
-		*TODO: REFACTORY
-		*execute(av + 1);
-		*/
-		check_path(av + 1);
+		check_path(av[0], av + 1);
+		exit(0);
 	}
 
-	my_print("#cisfun$");
+	my_print("#cisfun$ ");
 
 	while ((read = getline(&line, &len, stdin)) != -1)
 	{
@@ -34,9 +31,9 @@ int main(int ac, char **av)
 		if (my_strcmp(ptr_arr[0], "env") == 0)
 			print_env();
 		else
-		check_path(ptr_arr);
-/*		execute(ptr_arr);*/
-		my_print("#cisfun$");
+		check_path(av[0], ptr_arr);
+
+		my_print("#cisfun$ ");
 	}
 
 	free(line);

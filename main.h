@@ -22,7 +22,7 @@ char *copy_string(const char *src);
 
 void execute(char *path, char **args);
 
-void check_path(char **args);
+void check_path(char *p_name, char **args);
 
 void print_env(void);
 

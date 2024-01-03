@@ -27,7 +27,5 @@ void execute(char *path, char **args)
 			}
 		}
 		else
-		{
 			wait(&status);
-		}
 }
