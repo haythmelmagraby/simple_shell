@@ -10,7 +10,7 @@ void check_path(char **args)
 {
 	char *path = my_getenv("PATH");
 	char *copy = copy_string(path);
-	char *dir = strtok(copy,":");
+	char *dir = strtok(copy, ":");
 	char *mypath;
 	int flag = 0;
 
@@ -23,16 +23,16 @@ void check_path(char **args)
 	{
 		mypath = copy_string(dir);
 		mypath = my_strcat(mypath, "/");
-		mypath = my_strcat(mypath,args[0]);
+		mypath = my_strcat(mypath, args[0]);
 
 		if (access(mypath, F_OK) == 0)
 		{
 			flag = 1;
 			execute(mypath, args);
 		}
-		 dir = strtok(NULL,":");
+		 dir = strtok(NULL, ":");
 	}
-	if(flag == 0)
+	if (flag == 0)
 	{
 		my_print(args[0]);
 		my_print(" : FILE NOT FOUND\n");

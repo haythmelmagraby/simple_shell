@@ -4,6 +4,7 @@
 /**
 *execute - execute the application in spacific path
 *@args: pointer array of spacific path
+*@path: the file path if the user didn't write it
 **/
 
 void execute(char *path, char **args)
