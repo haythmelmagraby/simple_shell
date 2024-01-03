@@ -6,7 +6,7 @@
 #include <string.h>
 #include <unistd.h>
 
-extern char **environ;
+extern  char **environ;
 
 void my_print(const char *src);
 
@@ -20,8 +20,7 @@ char **split_string(char *src, char *delim);
 
 char *copy_string(const char *src);
 
-
-void execute(char **args);
+void execute(char *path, char **args);
 
 void check_path(char **args);
 

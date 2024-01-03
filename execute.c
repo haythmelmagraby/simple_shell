@@ -6,7 +6,7 @@
 *@args: pointer array of spacific path
 **/
 
-void execute(char **args)
+void execute(char *path, char **args)
 {
 	pid_t pid;
 	int status;
@@ -19,7 +19,7 @@ void execute(char **args)
 		}
 		if (pid == 0)
 		{
-			if (execve(args[0], args, environ) == -1)
+			if (execve(path, args, environ) == -1)
 			{
 				perror("");
 				exit(0);

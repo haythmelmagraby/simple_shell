@@ -14,15 +14,16 @@ char *my_getenv(const char *key)
 
 	while (environ[i])
 	{
-		token = strtok(environ[i], delim);
+		char *copy = copy_string(environ[i]);
+		token = strtok(copy, delim);
 		if (my_strcmp(token, key) == 0)
 		{
 		/* REMEMBER STRTOK KNOW IT'S POSITION FROM STATIC VARIABLE*/
-			return (strtok(NULL, delim));
+			char *val = strtok(NULL, delim);
+			return val;
 		}
+		free(copy);
 		i++;
 	}
-
-
-	exit(0);
+	exit(1);
 }

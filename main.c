@@ -40,6 +40,7 @@ int main(int ac, char **av)
 	}
 
 	free(line);
+	free(ptr_arr);
 	my_print("\n");
 
 	return (0);

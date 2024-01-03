@@ -9,6 +9,9 @@ void my_print(const char *src)
 {
 	int i = 0;
 
+	if(src == NULL)
+		return;
+
 	while (src[i] != '\0')
 	{
 		write(1, &src[i], 1);
