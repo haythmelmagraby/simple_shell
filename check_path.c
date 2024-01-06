@@ -34,10 +34,7 @@ void check_path(char *p_name, char **args)
 	}
 	if (flag == 0)
 	{
-		my_print(p_name);
-		my_print(": 1:");
-		my_print(args[0]);
-		my_print(" : FILE NOT FOUND\n");
+		my_print("%s : %d: %s : FILE NOT FOUND\n", p_name, 1, args[0]);
 	}
 	free(copy);
 	free(dir);

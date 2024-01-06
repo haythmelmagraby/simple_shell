@@ -25,7 +25,7 @@ char *copy_string(const char *src)
 
 	if (copy == NULL)
 	{
-		my_print("can't allocate copy in memory");
+		my_print("can't allocate copy in memory\n");
 		exit(1);
 	}
 

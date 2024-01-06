@@ -5,10 +5,17 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdarg.h>
 
 extern  char **environ;
 
-void my_print(const char *src);
+void my_putchar(const char c);
+
+void my_putint(int num);
+
+void my_puts(const char *string);
+
+void my_print(char *formate, ...);
 
 int my_strcmp(const char *s1, const char *s2);
 

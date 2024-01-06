@@ -15,7 +15,7 @@ void execute(char *path, char **args)
 		pid = fork();
 		if (pid == -1)
 		{
-			my_print("can't create pid");
+			my_print("can't create pid\n");
 			exit(1);
 		}
 		if (pid == 0)

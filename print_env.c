@@ -8,9 +8,9 @@ void print_env(void)
 {
 	int i = 0;
 
-	while (environ[i])
+	while (environ[i] != NULL)
 	{
-		my_print(environ[i]);
+		my_print("%s", environ[i]);
 		my_print("\n");
 		i++;
 	}

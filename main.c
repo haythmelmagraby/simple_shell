@@ -25,13 +25,17 @@ int main(int ac, char **av)
 	while ((read = getline(&line, &len, stdin)) != -1)
 	{
 		ptr_arr = split_string(line, delim);
-		if (my_strcmp(ptr_arr[0], "exit") == 0)
-			exit(0);
+		if (ptr_arr[0] != NULL)
+		{
+			if (my_strcmp(ptr_arr[0], "exit") == 0)
+				exit(0);
 
-		if (my_strcmp(ptr_arr[0], "env") == 0)
-			print_env();
-		else
-		check_path(av[0], ptr_arr);
+			if (my_strcmp(ptr_arr[0], "env") == 0)
+				print_env();
+			else
+				check_path(av[0], ptr_arr);
+
+		}
 
 		my_print("#cisfun$ ");
 	}
