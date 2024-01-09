@@ -28,7 +28,11 @@ int main(int ac, char **av)
 		if (ptr_arr[0] != NULL)
 		{
 			if (my_strcmp(ptr_arr[0], "exit") == 0)
+			{
+				free(line);
+				free(ptr_arr);
 				exit(0);
+			}
 
 			if (my_strcmp(ptr_arr[0], "env") == 0)
 				print_env();
@@ -36,13 +40,11 @@ int main(int ac, char **av)
 				check_path(av[0], ptr_arr);
 
 		}
+		free_string_splited(ptr_arr);
 
 		my_print("#cisfun$ ");
 	}
-
 	free(line);
-	free(ptr_arr);
 	my_print("\n");
-
 	return (0);
 }

@@ -14,7 +14,9 @@ int my_strcmp(const char *s1, const char *s2)
 	while (s1[i])
 	{
 		result = ((int) s1[i] - 48) - ((int) s2[i] - 48);
+		if (result != 0)
+			return (result);
 		i++;
 	}
-	return (result);
+	return (((int) s1[i] - 48) - ((int) s2[i] - 48));
 }

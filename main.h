@@ -25,6 +25,8 @@ char *my_getenv(const char *key);
 
 char **split_string(char *src, char *delim);
 
+void free_string_splited(char **arr);
+
 char *copy_string(const char *src);
 
 void execute(char *path, char **args);

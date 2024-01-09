@@ -65,7 +65,7 @@ void my_print(char *formate, ...)
 {
 	va_list args;
 	int i = 0;
-	char *copy = formate;
+	char *copy = copy_string(formate);
 
 	if (formate == NULL)
 		return;
@@ -93,5 +93,6 @@ void my_print(char *formate, ...)
 
 		i++;
 	}
+	free(copy);
 	va_end(args);
 }

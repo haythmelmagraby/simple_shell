@@ -17,7 +17,7 @@ char *my_strcat(char *dest, char *src)
 	while (src[src_counter] != '\0')
 		src_counter++;
 
-	dest = realloc(dest, sizeof(char *) * (dest_counter + src_counter + 1));
+	dest = realloc(dest, sizeof(char) * (dest_counter + src_counter + 1));
 	if (dest == NULL)
 	{
 		my_print("can't reaaloc");

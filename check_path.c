@@ -8,8 +8,7 @@
 
 void check_path(char *p_name, char **args)
 {
-	char *path = my_getenv("PATH");
-	char *copy = copy_string(path);
+	char *copy = copy_string(my_getenv("PATH"));
 	char *dir = strtok(copy, ":");
 	char *mypath;
 	int flag = 0;
@@ -17,6 +16,7 @@ void check_path(char *p_name, char **args)
 	if (access(args[0], F_OK) == 0)
 	{
 		execute(args[0], args);
+		free(copy);
 		return;
 	}
 	while (dir != NULL)
@@ -29,13 +29,18 @@ void check_path(char *p_name, char **args)
 		{
 			flag = 1;
 			execute(mypath, args);
+			free(copy);
+			free(mypath);
+			return;
 		}
-		 dir = strtok(NULL, ":");
+		free(mypath);
+		dir = strtok(NULL, ":");
 	}
+
 	if (flag == 0)
 	{
 		my_print("%s : %d: %s : FILE NOT FOUND\n", p_name, 1, args[0]);
 	}
+
 	free(copy);
-	free(dir);
 }

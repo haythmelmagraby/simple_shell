@@ -35,11 +35,31 @@ char **split_string(char *src, char *delim)
 	token = strtok(str2, delim);
 	while (token != NULL)
 	{
-		arr[i] = token;
+		arr[i] = copy_string(token);
 		token = strtok(NULL, delim);
 		i++;
 	}
 	arr[i] = NULL;
 
+	free(str2);
 	return (arr);
+}
+
+/**
+*free_string_splited - free allocated memory of splited string
+*@arr : the array of strings
+*
+**/
+
+void free_string_splited(char **arr)
+{
+	int i = 0;
+
+	if (arr == NULL)
+		return;
+	while (arr[i] != NULL)
+	{
+		free(arr[i]);
+		i++;
+	}
 }
