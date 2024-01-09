@@ -20,7 +20,6 @@ char *my_getenv(const char *key)
 		token = strtok(copy, delim);
 		if (my_strcmp(token, key) == 0)
 		{
-		/* REMEMBER STRTOK KNOW IT'S POSITION FROM STATIC VARIABLE*/
 			token = strtok(NULL, delim);
 			val = copy_string(token);
 			return (val);
